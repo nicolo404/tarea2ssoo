@@ -6,13 +6,19 @@ using namespace cv;
 using namespace std;
 using namespace std::chrono;
 
-int main() {
-    // Lee el archivo de imagen.
-    Mat image = imread("gato.jpeg", IMREAD_COLOR);
+int main(int argc, char** argv) {
+    // Verificar la cantidad correcta de argumentos de línea de comandos.
+    if (argc != 3) {
+        cout << "Uso: " << argv[0] << " <imagen_a_color> <imagen_escala_gris>" << endl;
+        return -1;
+    }
+
+    // Leer el archivo de imagen a color.
+    Mat image = imread(argv[1], IMREAD_COLOR);
 
     // Verificar si la imagen se carga correctamente.
     if (image.empty()) {
-        cout << "Error al cargar la imagen." << endl;
+        cout << "Error al cargar la imagen a color." << endl;
         return -1;
     }
 
@@ -30,11 +36,17 @@ int main() {
         }
     }
 
+    // Detener el temporizador.
     auto stop = high_resolution_clock::now();
 
+    // Calcular y mostrar la duración del procesamiento de la imagen.
     auto duration = duration_cast<microseconds>(stop - start);
-    cout << "Tiempo de procesamiento: " << duration.count() << " microsegundos." << endl;
+    cout << "Tiempo de procesamiento de la imagen con el método de luminosidad: " << duration.count() << " microsegundos." << endl;
 
+    // Guardar la imagen resultante en escala de grises.
+    imwrite(argv[2], luminosityImage);
+
+    // Mostrar la imagen resultante en escala de grises.
     imshow("Luminosity Image", luminosityImage);
     waitKey(0);
 
