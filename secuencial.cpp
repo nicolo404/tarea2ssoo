@@ -23,9 +23,9 @@ int main(int argc, char** argv) {
     }
 
     // Mostrar información sobre la imagen.
-    cout << "Loading image..." << endl;
-    cout << "Rows (height): " << image.rows << endl;
-    cout << "Cols (width): " << image.cols << endl;
+    cout << "Cargando imagen..." << endl;
+    cout << "Filas (height): " << image.rows << endl;
+    cout << "Columnas (width): " << image.cols << endl;
 
     // Iniciar el temporizador.
     auto start = high_resolution_clock::now();
