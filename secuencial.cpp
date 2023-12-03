@@ -7,7 +7,7 @@ using namespace std;
 using namespace std::chrono;
 
 int main(int argc, char** argv) {
-    // Verificar la cantidad correcta de argumentos de línea de comandos.
+    // Verificar la cantidad correcta de argumentos de línea de comandos .
     if (argc != 3) {
         cout << "Uso: " << argv[0] << " <imagen_a_color> <imagen_escala_gris>" << endl;
         return -1;
@@ -46,9 +46,9 @@ int main(int argc, char** argv) {
 
     // Calcular y mostrar la duración del procesamiento de la imagen.
     auto duration = duration_cast<microseconds>(stop - start);
-    cout << "Start conversion..." << endl;
-    cout << "End conversion..." << endl;
-    cout << "Total time spent in seconds is " << duration.count() / 1e6<< endl;
+    cout << "Incia conversion..." << endl;
+    cout << "Termina conversion..." << endl;
+    cout << "Total tiempo en espera " << duration.count() / 1e6<< endl;
 
     // Guardar la imagen resultante en escala de grises.
     imwrite(argv[2], luminosityImage);
@@ -56,6 +56,7 @@ int main(int argc, char** argv) {
     // Mostrar la imagen resultante (opcional).
     imshow("Luminosity Image", luminosityImage);
     waitKey(0);
+
 
     return 0;
 }
