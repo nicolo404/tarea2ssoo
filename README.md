@@ -2,7 +2,7 @@
 Tarea 2 de la asignatura Sistemas Operativos
 
 ## Profesor: 
-
+    Alejandro Valdés Jiménez
 ## Integrantes:
     Nicolás Silva Pereira
     Aldo Martínez Marihuén
