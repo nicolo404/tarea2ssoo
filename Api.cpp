@@ -66,5 +66,5 @@ int main(int argc, char* argv[]) {
 
     cout << "Imagen procesada y guardada como " << argv[2] << endl;
 
-    return 0;
+    return 0;  // This is the correct location for return 0;
 }
