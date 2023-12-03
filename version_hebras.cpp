@@ -59,7 +59,7 @@ int main(int argc, char* argv[]) {
     auto start_time = chrono::high_resolution_clock::now();
 
     // Crear las hebras y procesar las porciones de la imagen.
-    cout << "Start conversion..." << endl;
+    cout << "Inicia conversion..." << endl;
     for (int i = 0; i < numThreads; i++) {
         int startRow = i * rowsPerThread;
         int endRow = (i == numThreads - 1) ? image.rows : (i + 1) * rowsPerThread;
@@ -75,9 +75,9 @@ int main(int argc, char* argv[]) {
     auto end_time = chrono::high_resolution_clock::now();
     auto duration = chrono::duration_cast<chrono::duration<double>>(end_time - start_time);
 
-    cout << "End conversion..." << endl;
+    cout << "Termina la conversion..." << endl;
     cout << fixed << setprecision(6);
-    cout << "Total time spent in seconds is " << duration.count() << endl;
+    cout << "Total tiempo en segundos" << duration.count() << endl;
 
     // Guardar la imagen procesada.
     imwrite(argv[2], image);
