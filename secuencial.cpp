@@ -13,7 +13,7 @@ int main(int argc, char** argv) {
         return -1;
     }
 
-    // Leer el archivo de imagen a color.
+    // Lee el archivo de imagen a color.
     Mat image = imread(argv[1], IMREAD_COLOR);
 
     // Verificar si la imagen se carga correctamente.
@@ -21,6 +21,11 @@ int main(int argc, char** argv) {
         cout << "Error al cargar la imagen a color." << endl;
         return -1;
     }
+
+    // Mostrar información sobre la imagen.
+    cout << "Loading image..." << endl;
+    cout << "Rows (height): " << image.rows << endl;
+    cout << "Cols (width): " << image.cols << endl;
 
     // Iniciar el temporizador.
     auto start = high_resolution_clock::now();
@@ -41,12 +46,14 @@ int main(int argc, char** argv) {
 
     // Calcular y mostrar la duración del procesamiento de la imagen.
     auto duration = duration_cast<microseconds>(stop - start);
-    cout << "Tiempo de procesamiento de la imagen con el método de luminosidad: " << duration.count() << " microsegundos." << endl;
+    cout << "Start conversion..." << endl;
+    cout << "End conversion..." << endl;
+    cout << "Total time spent in seconds is " << duration.count() / 1e6<< endl;
 
     // Guardar la imagen resultante en escala de grises.
     imwrite(argv[2], luminosityImage);
 
-    // Mostrar la imagen resultante en escala de grises.
+    // Mostrar la imagen resultante (opcional).
     imshow("Luminosity Image", luminosityImage);
     waitKey(0);
 
