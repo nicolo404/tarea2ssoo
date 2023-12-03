@@ -23,9 +23,9 @@ int main(int argc, char** argv) {
     }
 
     // Mostrar información sobre la imagen.
-    cout << "Loading image..." << endl;
-    cout << "Rows (height): " << image.rows << endl;
-    cout << "Cols (width): " << image.cols << endl;
+    cout << "Cargnado imagen..." << endl;
+    cout << "Filas (height): " << image.rows << endl;
+    cout << "columnas (width): " << image.cols << endl;
 
     // Iniciar el temporizador.
     auto start = high_resolution_clock::now();
@@ -46,9 +46,9 @@ int main(int argc, char** argv) {
 
     // Calcular y mostrar la duración del procesamiento de la imagen.
     auto duration = duration_cast<microseconds>(stop - start);
-    cout << "Start conversion..." << endl;
-    cout << "End conversion..." << endl;
-    cout << "Total time spent in seconds is " << duration.count() / 1e6<< endl;
+    cout << "Inicia conversion..." << endl;
+    cout << "Termina conversion..." << endl;
+    cout << "Total tiempo de espera " << duration.count() / 1e6<< endl;
 
     // Guardar la imagen resultante en escala de grises.
     imwrite(argv[2], luminosityImage);
